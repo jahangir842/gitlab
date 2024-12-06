@@ -1,23 +1,8 @@
 ### README.md
 
-```markdown
 # GitLab Docker Setup
 
 This repository contains a `docker-compose.yml` file to deploy GitLab Community Edition (CE) using Docker. It also includes notes on GitLab setup, initial login credentials, and other essential configuration details.
-
-## Table of Contents
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Setup Instructions](#setup-instructions)
-  - [Clone the Repository](#clone-the-repository)
-  - [Start GitLab](#start-gitlab)
-- [Configuration Details](#configuration-details)
-  - [Default Ports](#default-ports)
-  - [Volumes](#volumes)
-  - [Environment Variables](#environment-variables)
-- [Initial Login Credentials](#initial-login-credentials)
-- [Notes](#notes)
-- [References](#references)
 
 ## Overview
 This project provides an easy way to set up GitLab CE locally or on a server using Docker Compose. GitLab is a web-based DevOps lifecycle tool that provides a Git repository manager with features like CI/CD, issue tracking, and more.
@@ -94,31 +79,3 @@ Change the password immediately after the first login.
 ## References
 - [GitLab Docker Documentation](https://docs.gitlab.com/omnibus/docker/)
 - [GitLab Official Website](https://about.gitlab.com/)
-```
-
-### Example `docker-compose.yml`
-
-```yaml
-version: '3.8'
-
-services:
-  gitlab:
-    image: gitlab/gitlab-ce:latest
-    container_name: gitlab
-    restart: always
-    hostname: 'gitlab.local'
-    ports:
-      - "80:80"
-      - "443:443"
-      - "2222:22"
-    volumes:
-      - ./config:/etc/gitlab
-      - ./logs:/var/log/gitlab
-      - ./data:/var/opt/gitlab
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.local'
-        gitlab_rails['gitlab_shell_ssh_port'] = 2222
-```
-
-Let me know if you need additional customization or clarification!
