@@ -42,6 +42,19 @@ cd gitlab
 
 These ports are configurable in the `docker-compose.yml` file.
 
+GitLab uses three ports for distinct purposes:
+
+1. **HTTP (Port 80)**: For unencrypted web traffic (default for `http://`).
+2. **HTTPS (Port 443)**: For secure, encrypted web traffic (default for `https://`).
+3. **SSH (Port 2222)**: For Git operations (push, pull, clone) over a secure SSH connection.
+
+### Why Different Ports?
+- **Separation of Concerns**: Web UI (HTTP/HTTPS) vs. Git operations (SSH).
+- **Security**: HTTPS and SSH ensure encrypted communication.
+- **Avoid Conflicts**: Port `2222` avoids clashing with host SSH (`22`) in Docker.
+
+Use HTTPS for secure web access and SSH for secure repository management.
+
 ### Volumes
 Persistent data is stored in the following directories (relative to the repository root):
 - `config/`: Configuration files
