@@ -1,6 +1,4 @@
-### README.md
-
-# GitLab Docker Setup
+## GitLab Docker Setup
 
 This repository contains a `docker-compose.yml` file to deploy GitLab Community Edition (CE) using Docker. It also includes notes on GitLab setup, initial login credentials, and other essential configuration details.
 
