@@ -16,8 +16,8 @@ This project provides an easy way to set up GitLab CE locally or on a server usi
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/gitlab-docker-setup.git
-cd gitlab-docker-setup
+git clone https://github.com/jahangir842/gitlab.git
+cd gitlab
 ```
 
 ### Start GitLab
