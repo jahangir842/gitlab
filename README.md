@@ -64,7 +64,9 @@ Persistent data is stored in the following directories (relative to the reposito
 ### Environment Variables
 Environment variables can be added or modified in the `docker-compose.yml` file to customize GitLab.
 
-## Initial Login Credentials
+---
+
+## Initial Login Credentials : Method 1
 After the first startup, GitLab generates a root password. 
 
 To retrieve it:
@@ -76,6 +78,43 @@ The username for the initial login is:
 - **Username**: `root`
 
 Change the password immediately after the first login.
+
+
+---
+## Initial Login Credentials : Method 2
+
+### 1. **Access the Container**
+
+Run the following command to access the container:
+
+```
+docker exec -it <gitlab container name> bash
+```
+
+### 2. **Set or Retrieve the Root Password**
+
+Inside the container, use this command:
+
+```
+gitlab-rails console
+```
+
+- **Retrieve Password**:
+  ```ruby
+  user = User.where(id: 1).first
+  puts user.encrypted_password
+  ```
+- **Set a New Password**:
+  ```ruby
+  user = User.where(id: 1).first
+  user.password = 'YourNewPassword'
+  user.password_confirmation = 'YourNewPassword'
+  user.save!
+  ```
+
+Exit and test the new password.
+
+---
 
 ## Notes
 - Ensure sufficient resources are allocated to the Docker engine for smooth performance.
