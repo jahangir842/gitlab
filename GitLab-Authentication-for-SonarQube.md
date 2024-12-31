@@ -2,6 +2,8 @@
 
 This guide provides step-by-step instructions to integrate GitLab with SonarQube, allowing users to sign in or sign up on SonarQube using their GitLab credentials.
 
+[GitLab Authentication for SonarQube](https://www.youtube.com/watch?v=XX0ey4rRvms)
+
 ---
 
 ### Prerequisites
