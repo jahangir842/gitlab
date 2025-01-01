@@ -38,7 +38,7 @@ Video Tutorial: [GitLab Authentication for SonarQube](https://www.youtube.com/wa
 ### Step 2: Configure SonarQube for GitLab Authentication
 
 1. Log in to your **SonarQube** instance as an Admin.
-2. Navigate to **Administration > Configuration > General Settings > Authentication > Gitlab > Create SAML Configuration**.
+2. Navigate to **Administration > Configuration > General Settings > Authentication > Gitlab > Create Configuration**.
 3. Scroll down to **GitLab Authentication** and configure the following fields:
    - **GitLab URL:** 
      - For GitLab.com: `https://gitlab.com`
