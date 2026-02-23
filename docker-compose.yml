@@ -1,13 +1,11 @@
-version: '3.7'
-
 services:
   gitlab:
-    image: 'gitlab/gitlab-ce:latest'
+    image: 'gitlab/gitlab-ce:18.9.0-ce.0' // you can change the image version
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'gitlab.centaic.ai'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.example.com'
+        external_url 'http://gitlab.centaic.ai'
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
     ports:
       - '80:80'
@@ -17,4 +15,4 @@ services:
       - './config:/etc/gitlab'
       - './logs:/var/log/gitlab'
       - './data:/var/opt/gitlab'
-
+    shm_size: '256m'
