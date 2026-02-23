@@ -1,6 +1,6 @@
 services:
   gitlab:
-    image: 'gitlab/gitlab-ce:18.9.0-ce.0' // you can change the image version
+    image: 'gitlab/gitlab-ce:18.9.0-ce.0' 
     restart: always
     hostname: 'gitlab.centaic.ai'
     environment:
